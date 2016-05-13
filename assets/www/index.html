@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+<title>Tony &amp; Mark's</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+<link href="css/framework1.css" rel="stylesheet" type="text/css">
+<link href="css/style1.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/jqueryui.js"></script>
+	<script type="text/javascript" src="scripts/framework-plugins.js"></script>
+	<script type="text/javascript" src="scripts/custom.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+<div class="main_ap">
+	<div class="logo">
+    	<a href="#"><img src="images/logo.png" alt="logo" /></a>
+    </div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/event.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+$(window).load(function() {
+
+setTimeout(
+  function()
+  {
+   var emailid = localStorage.getItem('userloginemailid');
+		var pwdis =	localStorage.getItem('userloginpassword');
+
+        if(emailid != null && emailid != '')
+		{
+		    if(pwdis != null && pwdis != '')
+			{
+					window.location = "home.html";
+			}
+			else
+			{
+					window.location = "login.html";
+			}
+		}
+			else
+			{
+					window.location = "login.html";
+			}
+}, 3000);
+
+});
+</script>

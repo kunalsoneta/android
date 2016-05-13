@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+<title>Dashboard</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+<link href="css/framework1.css" rel="stylesheet" type="text/css">
+<link href="css/style1.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jqueryui.js"></script>
+<script type="text/javascript" src="js/framework-plugins.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+
+</head>
+
+<body class="left-sidebar">
+
+<div id="preloader">
+  <div id="status">
+    <div class="preloader-logo"></div>
+    <h3 class="center-text">Welcome</h3>
+    <p class="center-text smaller-text"> We're loading the content, give us a second. This won't take long! </p>
+  </div>
+</div>
+
+<div id="header" class="header">
+	<div class="ri_1">
+    <div class="header-elements_1">
+    	<a href="#" class="left_back"><img src="images/back_icon.png" alt="" /></a>
+        <div class="ho_ti">
+            <h1>Dashboard</h1>
+		</div>
+    	<a href="#" class="header-icon-3 open-left-sidebar"><img src="images/menu_icon.png" alt="" /></a>
+    </div>
+    </div>
+         
+</div>
+
+
+<div class="all-elements">
+    <div class="snap-drawers">
+        <!--Left Sidebar-->
+        <div class="snap-drawer snap-drawer-left">
+            <div class="sidebar-header-left">
+                <a class="sidebar_prof" href="#">
+                	<div class="left_logo_p cf">
+                        <div class="te_left">
+                        	<img src="images/logo.png" alt="logo" />
+                        </div>
+                    </div>
+                </a>
+            </div>      
+            <div class="sidebar-menu">
+			    <a class="menu-item" href="#">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_d.png" alt="" />
+                        	<h1>Dashboard</h1>
+                        </div>
+                    </div>
+                </a>
+				
+                <a class="menu-item" href="#">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_m.png" alt="" />
+                        	<h1> My Account Information</h1>
+                        </div>
+                    </div>
+                </a>                
+                <a class="menu-item" href="#">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_o.png" alt="" />
+                        	<h1> Order Histroy</h1>
+                        </div>
+                    </div>
+                </a>
+                <a class="menu-item" href="grocery.html">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                            <img src="images/menu_icon_o.png" alt="" />
+                            <h1>Store Order</h1>
+                        </div>
+                    </div>
+                </a>
+                <a class="menu-item" href="#">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_r.png" alt="" />
+                        	<h1>Recent Order Information</h1>
+                        </div>
+                    </div>
+                </a>                
+                <a href="customer_care.html" class="menu-item">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_l.png" alt="" />
+                        	<h1>Logout</h1></div>
+                        </div>
+                    </div>
+                </a>                 
+            </div>
+
+        </div>
+        
+        
+        
+        <div id="content" class="snap-content">
+            <!--<div class="logo">
+            	<a href="#"><img src="images/logo.png" alt="logo" /></a>
+            </div>-->
+            <div class="baner_box">
+            	<img src="images/banner_1.jpg" alt="" />
+            </div>
+            <div class="prod_box cf">
+            	<a href="#">
+            	<div class="pr_box_01">
+                	<img src="images/icone_01.png" alt="" />
+                    <h3>histroy</h3>
+                </div>
+                </a>
+                <a href="#">
+                <div class="pr_box_02">
+                	<img src="images/icone_02.png" alt="" />
+                    <h3>Last Order information</h3>
+                </div>
+                </a>
+                <a href="#">
+            	<div class="pr_box_03">
+                	<img src="images/icone_03.png" alt="" />
+                    <h3>Announcements</h3>
+                </div>
+                </a>
+            </div>
+            
+            
+        </div>
+    </div>  
+</div>
+
+
+
+<div class="main_ap">
+	
+</div>
+
+<script src="js/jquery-1.9.1.min.js"></script> 
+<script type="text/javascript" src="js/framework-plugins.js"></script>
+<script src="js/owl.carousel.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+
+      navigation : true,
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem : true,
+	  autoPlay : 3000,
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+      });
+    });
+    </script>
+    
+
+
+</body>
+</html>

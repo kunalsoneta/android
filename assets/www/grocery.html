@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+<title>Grocery</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+<link href="css/framework1.css" rel="stylesheet" type="text/css">
+<link href="css/style1.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+
+<link href="css/WellTabbed.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/wan-spinner.css">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jqueryui.js"></script>
+<script type="text/javascript" src="js/framework-plugins.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/jquery-1.8.2.min.js"></script>
+
+<link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
+<link href="css/datepicker.css" rel="stylesheet" type="text/css">
+
+<script src="js/event.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js'></script>
+    <script>
+$(function () {
+  $("#datepicker").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+  }).datepicker('update', new Date());;
+});
+</script>
+    <script>
+        $(document).ready(function()
+        {
+            GetProduct();
+        });
+
+    </script>
+    <style>
+        .qty {
+            display: inline-block;
+            width: 30px;
+            text-align: center;
+        }
+        .textbox_price{
+            float: left;
+        }
+    </style>
+
+</head>
+
+<body class="left-sidebar">
+
+<div id="preloader">
+  <div id="status">
+    <div class="preloader-logo"></div>
+    <h3 class="center-text">Welcome</h3>
+    <p class="center-text smaller-text"> We're loading the content, give us a second. This won't take long! </p>
+  </div>
+</div>
+
+<div id="header" class="header">
+	<div class="ri_1">
+    <div class="header-elements_1">
+    	<a href="#" class="left_back"><img src="images/back_icon.png" alt="" /></a>
+        <div class="ho_ti">
+            <h1>Grocery</h1>
+		</div>
+        <div class="cart_b">
+            <a href="#">
+                <img src="images/cart_icon.png" alt="" />
+                <span onclick="itemcallcart()" class="cartvalue">0</span>
+            </a>
+        </div>
+        <a href="#" class="header-icon-3 open-left-sidebar"><img src="images/menu_icon.png" alt="" /></a>
+    </div>
+    </div>
+         
+</div>
+
+
+<div class="all-elements">
+    <div class="snap-drawers">
+        <!--Left Sidebar-->
+        <div class="snap-drawer snap-drawer-left">
+            <div class="sidebar-header-left">
+                <a class="sidebar_prof" href="#">
+                	<div class="left_logo_p cf">
+                        <div class="te_left">
+                        	<img src="images/logo.png" alt="logo" />
+                        </div>
+                    </div>
+                </a>
+            </div>      
+            <div class="sidebar-menu">
+			    <a class="menu-item" href="#">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_d.png" alt="" />
+                        	<h1>Dashboard</h1>
+                        </div>
+                    </div>
+                </a>
+				
+                <a class="menu-item" href="#">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_m.png" alt="" />
+                        	<h1> My Account Information</h1>
+                        </div>
+                    </div>
+                </a>                
+                <a class="menu-item" href="#">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_o.png" alt="" />
+                        	<h1> Order Histroy</h1>
+                        </div>
+                    </div>
+                </a>      
+                <a class="menu-item" href="#">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_r.png" alt="" />
+                        	<h1>Recent Order Information</h1>
+                        </div>
+                    </div>
+                </a>                
+                <a href="customer_care.html" class="menu-item">
+                    <div class="link_box cf">
+                        <div class="link_title">
+                        	<img src="images/menu_icon_l.png" alt="" />
+                        	<h1>Logout</h1></div>
+                        </div>
+                </a>                 
+            </div>
+
+        </div>
+    <!-- Slide Bar End -->
+
+        <div id="content" class="snap-content bg2">
+            <!--<div class="logo">
+            	<a href="#"><img src="images/logo.png" alt="logo" /></a>
+            </div>-->
+            <div class="main_gro_b">
+                <!-- div for first spinner -->
+            	<div class="bi_1 cf">
+                    <div class="gro_l">
+                        <select id="store"></select>
+                    </div>
+
+                    <!-- div for date & time spinner -->
+                    <div class="gro_r">
+                	<div class="dat_box">
+                    	<div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                            <input class="form-control" type="text" readonly />
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- div for products -->
+                <div id="DisplayProduct">
+              <!--  <div class="pro_box">
+                    <div class="tp_box cf">
+                        <div class="tp_l">
+                            <img src="images/img_01.png" alt="" />
+                        </div>
+
+                        <div class="tp_r">
+                            <h1>THE WEEKENDER</h1>
+                            <p>ONE SIZE: $29.99 (serves on a 12 inch round platter)</p>
+                        </div>
+                    </div>
+
+                    <div class="pr_ad cf">
+                        <div class="pr_ad_l">
+                            <div class="wan-spinner wan-spinner-2">
+                                <a href="javascript:void(0)" class="minus"></a>
+                                <input type="text" value="0">
+                                <a href="javascript:void(0)" class="plus"></a>
+                            </div>
+                        </div>
+                        <div class="pr_ad_r">
+                            <h2>$ 59.98</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_box">
+                	<div class="tp_box cf">
+                    	<div class="tp_l">
+                        	<img src="images/img_01.png" alt="" />
+                        </div>
+                        <div class="tp_r">
+                        	<h1>THE WEEKENDER</h1>
+                            <p>ONE SIZE: $29.99 (serves on a 12 inch round platter)</p>
+                        </div>
+                    </div>
+                    <div class="pr_ad cf">
+                    	<div class="pr_ad_l">
+                        	<div class="wan-spinner wan-spinner-2">
+                                    <a href="javascript:void(0)" class="minus"></a>
+                                    <input type="text" value="0">
+                                    <a href="javascript:void(0)" class="plus"></a>
+                                  </div>
+                        </div>
+                        <div class="pr_ad_r">
+                        	<h2>$ 59.98</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_box">
+                	<div class="tp_box cf">
+                    	<div class="tp_l">
+                        	<img src="images/img_01.png" alt="" />
+                        </div>
+                        <div class="tp_r">
+                        	<h1>THE WEEKENDER</h1>
+                            <p>ONE SIZE: $29.99 (serves on a 12 inch round platter)</p>
+                        </div>
+                    </div>
+                    <div class="pr_ad cf">
+                    	<div class="pr_ad_l">
+                        	<div class="wan-spinner wan-spinner-2">
+                                    <a href="javascript:void(0)" class="minus"></a>
+                                    <input type="text" value="0">
+                                    <a href="javascript:void(0)" class="plus"></a>
+                                  </div>
+                        </div>
+                        <div class="pr_ad_r">
+                        	<h2>$ 59.98</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_box">
+                	<div class="tp_box cf">
+                    	<div class="tp_l">
+                        	<img src="images/img_01.png" alt="" />
+                        </div>
+                        <div class="tp_r">
+                        	<h1>THE WEEKENDER</h1>
+                            <p>ONE SIZE: $29.99 (serves on a 12 inch round platter)</p>
+                        </div>
+                    </div>
+                    <div class="pr_ad cf">
+                    	<div class="pr_ad_l">
+                        	<div class="wan-spinner wan-spinner-2">
+                                    <a href="javascript:void(0)" class="minus"></a>
+                                    <input type="text" value="0">
+                                    <a href="javascript:void(0)" class="plus"></a>
+                                  </div>
+                        </div>
+                        <div class="pr_ad_r">
+                        	<h2>$ 59.98</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_box">
+                	<div class="tp_box cf">
+                    	<div class="tp_l">
+                        	<img src="images/img_01.png" alt="" />
+                        </div>
+                        <div class="tp_r">
+                        	<h1>THE WEEKENDER</h1>
+                            <p>ONE SIZE: $29.99 (serves on a 12 inch round platter)</p>
+                        </div>
+                    </div>
+                    <div class="pr_ad cf">
+                    	<div class="pr_ad_l">
+                        	<div class="wan-spinner wan-spinner-2">
+                                    <a href="javascript:void(0)" class="minus"></a>
+                                    <input type="text" value="0">
+                                    <a href="javascript:void(0)" class="plus"></a>
+                                  </div>
+                        </div>
+                        <div class="pr_ad_r">
+                        	<h2>$ 59.98</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_box">
+                	<div class="tp_box cf">
+                    	<div class="tp_l">
+                        	<img src="images/img_01.png" alt="" />
+                        </div>
+                        <div class="tp_r">
+                        	<h1>THE WEEKENDER</h1>
+                            <p>ONE SIZE: $29.99 (serves on a 12 inch round platter)</p>
+                        </div>
+                    </div>
+                    <div class="pr_ad cf">
+                    	<div class="pr_ad_l">
+                        	<div class="wan-spinner wan-spinner-2">
+                                    <a href="javascript:void(0)" class="minus"></a>
+                                    <input type="text" value="0">
+                                    <a href="javascript:void(0)" class="plus"></a>
+                                  </div>
+                        </div>
+                        <div class="pr_ad_r">
+                        	<h2>$ 59.98</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_box">
+                	<div class="tp_box cf">
+                    	<div class="tp_l">
+                        	<img src="images/img_01.png" alt="" />
+                        </div>
+                        <div class="tp_r">
+                        	<h1>THE WEEKENDER</h1>
+                            <p>ONE SIZE: $29.99 (serves on a 12 inch round platter)</p>
+                        </div>
+                    </div>
+                    <div class="pr_ad cf">
+                    	<div class="pr_ad_l">
+                        	<div class="wan-spinner wan-spinner-2">
+                                    <a href="javascript:void(0)" class="minus"></a>
+                                    <input type="text" value="0">
+                                    <a href="javascript:void(0)" class="plus"></a>
+                                  </div>
+                        </div>
+                        <div class="pr_ad_r">
+                        	<h2>$ 59.98</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="pro_box">
+                	<div class="tp_box cf">
+                    	<div class="tp_l">
+                        	<img src="images/img_01.png" alt="" />
+                        </div>
+                        <div class="tp_r">
+                        	<h1>THE WEEKENDER</h1>
+                            <p>ONE SIZE: $29.99 (serves on a 12 inch round platter)</p>
+                        </div>
+                    </div>
+                    <div class="pr_ad cf">
+                    	<div class="pr_ad_l">
+                        	<div class="wan-spinner wan-spinner-2">
+                                    <a href="javascript:void(0)" class="minus"></a>
+                                    <input type="text" value="0">
+                                    <a href="javascript:void(0)" class="plus"></a>
+                                  </div>
+                        </div>
+                        <div class="pr_ad_r">
+                        	<h2>$ 59.98</h2>
+                        </div>
+                    </div>
+                </div>  -->
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+<div class="main_ap">
+</div>
+<script type="text/javascript" src="js/wan-spinner.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var options = {
+      maxValue: 10,
+      minValue: -5,
+      step: 0.131,
+      inputWidth: 100,
+      start: -2,
+      plusClick: function(val) {
+        console.log(val);
+      },
+      minusClick: function(val) {
+        console.log(val);
+      },
+      exceptionFun: function(val) {
+        console.log("excep: " + val);
+      },
+      valueChanged: function(val) {
+        console.log('change: ' + val);
+      }
+
+    }
+    $(".wan-spinner-2").WanSpinner().css("border-color", "#2C3E50");
+  });
+  </script>
+<!--<script src="js/jquery-1.9.1.min.js"></script> -->
+<script type="text/javascript" src="js/framework-plugins.js"></script>
+<script type="text/javascript">
+    $(window).load(function()
+    {
+    callcart();
+    });
+
+</script>
+
+<script language="javascript">
+    var lastValue;
+    $("#store").bind("click", function(e){
+        lastValue = $(this).val();
+    }).bind("change", function(e){
+    changeConfirmation = confirm("If you change store order progress will be lost.");
+    if (changeConfirmation) {
+        GetStoreId();
+    } else {
+    $(this).val(lastValue);
+
+    }
+});
+    </script>
+</body>
+</html>

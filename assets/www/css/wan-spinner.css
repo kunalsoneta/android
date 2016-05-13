@@ -1,0 +1,66 @@
+/*********** spinner start *************/
+
+.wan-spinner {
+  border:none;
+  display:table;
+}
+
+.wan-spinner .minus,
+.wan-spinner .plus,
+.wan-spinner input {
+  float: left;
+  line-height: 1em;
+  padding: 0px;
+  text-align: center;
+  font-size:18px;
+  
+}
+
+.wan-spinner input {
+  border: none;
+  margin: 0;
+  width: 34px !important;
+  color:#363532;
+  background:none;
+  height:25px;
+  font-family: "MyriadPro-Regular";	
+}
+.wan-spinner .minus{
+	background: rgba(0, 0, 0, 0) url("../images/rem_icon.png") no-repeat scroll 0 0;
+	background-size:cover;
+    display: block;
+    float: left;
+    height: 20px;
+    margin-left: 2px;
+    margin-top: 5px;
+    padding: 0 !important;
+    width: 20px !important;
+	}
+
+.wan-spinner .minus:hover {
+    background: rgba(0, 0, 0, 0) url("../images/rem_icon.png") no-repeat scroll 0 -20px;
+	background-size:cover;
+}
+
+.wan-spinner .plus {
+  color: #333333;
+  cursor: pointer;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0) url("../images/add_icon.png") no-repeat scroll 0 0;
+  background-size:cover;
+  display: block;
+  float: right;
+  height: 20px;
+  margin-right: 2px;
+  margin-top: 5px;
+  padding: 0 !important;
+  width: 20px !important;
+}
+
+.wan-spinner .plus:hover {
+    background: rgba(0, 0, 0, 0) url("../images/add_icon.png") no-repeat scroll 0 -20px;
+	background-size:cover;
+}
+
+
+/*********** spinner end *************/
